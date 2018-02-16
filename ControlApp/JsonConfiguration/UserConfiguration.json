@@ -1,0 +1,26 @@
+{
+    "Users:" :[
+        {
+               "Enable" : true
+               "t2maccount" : "usbudan1",
+               "t2musername" : "usbudan",
+               "themeIndex" : 0，
+               "displayTags" : {
+                            "Temp_trend" : 0,
+                            "Level_trend" : 0,
+                            "Hot_Water_Valve" : 0
+                }
+        },
+        {
+               "Enable" : false
+               "t2maccount" : "sampleAccount",
+               "t2musername" : "sampleUsername",
+               "themeIndex" : 0，
+               "displayTags" : {
+                                "Temp_trend" : 0
+                }
+        }
+    ]
+}
+
+

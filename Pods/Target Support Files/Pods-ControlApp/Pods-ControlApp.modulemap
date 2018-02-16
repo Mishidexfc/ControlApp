@@ -1,0 +1,6 @@
+framework module Pods_ControlApp {
+  umbrella header "Pods-ControlApp-umbrella.h"
+
+  export *
+  module * { export * }
+}

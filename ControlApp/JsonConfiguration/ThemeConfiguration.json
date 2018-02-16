@@ -1,0 +1,16 @@
+{
+    "Themes" :[
+    {
+        "Index" : 0
+        "Scheme" : "Blue"
+        "Color_Navigation" : "3F51B5"
+    }
+
+    {
+        "Index" : 1
+        "Scheme" : "Orange"
+        "Color_Navigation" : "FF9300"
+    }
+    ]
+}
+
