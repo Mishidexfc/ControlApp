@@ -5,6 +5,8 @@
 //  Created by Jue Wang on 2018/1/18.
 //  Copyright © 2018年 AlfaLavalNiagaraBlowers. All rights reserved.
 ////////////////////////////////////////////////////////////
+//  Description: View Controller for login page.
+////////////////////////////////////////////////////////////
 //  Update History:
 //  Jan.18th.2018 Help button alert action for contact, term of use(not designed yet) and cancel.
 //  ------------- Sign in button jump to main page, keychain not implemented yet.
@@ -22,7 +24,7 @@ class LoginViewController: UIViewController{
     @IBOutlet weak var TF_account: UITextField!
     @IBOutlet weak var TF_username: UITextField!
     @IBOutlet weak var TF_password: UITextField!
-    
+    private let loginModel = LoginModel()
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -78,8 +80,8 @@ class LoginViewController: UIViewController{
         /// Verification here
         Act_Login_Loading.isHidden = false
         Act_Login_Loading.startAnimating()
-        /// Send credentials to Ewon by using login api.
-        ewon.verifyKeychain(account: TF_account.text!, userName: TF_username.text!, password: TF_password.text!, completion: self.permitLogin(result:code:))
+        /// Send credentials to model.
+        loginModel.Login(account: TF_account.text!, userName: TF_username.text!, password: TF_password.text!, completion: self.permitLogin(result:code:))
         ///
     }
     

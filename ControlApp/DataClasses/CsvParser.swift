@@ -4,7 +4,15 @@
 //
 //  Created by Jue Wang on 2018/1/24.
 //  Copyright © 2018年 AlfaLavalNiagaraBlowers. All rights reserved.
-//
+////////////////////////////////////////////////////////////
+//  Update History:
+//  Jan.18th.2018 Help button alert action for contact, term of use(not designed yet) and cancel.
+//  ------------- Sign in button jump to main page, keychain not implemented yet.
+//  Jan.23th.2018 Access Ewon login api and implement loading animation.
+//  Jan.24th.2018 Implement keychain store and biological id verification
+//  All api access functions are transferred to EwonApiCase class now.
+//  Feb.16th.2018 Add code comments and improve code logic.
+////////////////////////////////////////////////////////////
 
 import Foundation
 class CsvParser {

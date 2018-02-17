@@ -34,6 +34,7 @@
 		0BB7F8E22024BF4C00EBEFB8 /* ThemeConfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 0BB7F8E12024BF4C00EBEFB8 /* ThemeConfiguration.json */; };
 		0BB7F8E42024C2F700EBEFB8 /* UserConfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 0BB7F8E32024C2F700EBEFB8 /* UserConfiguration.json */; };
 		0BC0202A20370B35006C8107 /* StatusDetailCustomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC0202920370B35006C8107 /* StatusDetailCustomeCell.swift */; };
+		0BC0202C20375F27006C8107 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC0202B20375F27006C8107 /* LoginModel.swift */; };
 		DE24869F4F4763A8DA9114A4 /* Pods_ControlApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 874F594FAAA52F3515A7653D /* Pods_ControlApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +68,7 @@
 		0BB7F8E12024BF4C00EBEFB8 /* ThemeConfiguration.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ThemeConfiguration.json; sourceTree = "<group>"; };
 		0BB7F8E32024C2F700EBEFB8 /* UserConfiguration.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = UserConfiguration.json; sourceTree = "<group>"; };
 		0BC0202920370B35006C8107 /* StatusDetailCustomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusDetailCustomeCell.swift; sourceTree = "<group>"; };
+		0BC0202B20375F27006C8107 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		23F8253D14AA4BF39B7D3F0F /* Pods-ControlApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ControlApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ControlApp/Pods-ControlApp.debug.xcconfig"; sourceTree = "<group>"; };
 		874F594FAAA52F3515A7653D /* Pods_ControlApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ControlApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A45A08284CA8A61F6E015401 /* Pods-ControlApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ControlApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-ControlApp/Pods-ControlApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				0B8C101520110215008322C3 /* LoginViewController.swift */,
+				0BC0202B20375F27006C8107 /* LoginModel.swift */,
 			);
 			path = LoginPage;
 			sourceTree = "<group>";
@@ -354,6 +357,7 @@
 				0B8C102F20127791008322C3 /* SupportCollectionCell.swift in Sources */,
 				0B12AC5D201A355000123C30 /* StatusDetailViewController.swift in Sources */,
 				0B12AC522017CBFC00123C30 /* UserParameters.swift in Sources */,
+				0BC0202C20375F27006C8107 /* LoginModel.swift in Sources */,
 				0B12AC62201A6D2B00123C30 /* AccountLogoutCell.swift in Sources */,
 				0B12AC502017C39200123C30 /* StatusAddNewCell.swift in Sources */,
 				0B12AC59201902CE00123C30 /* CsvParser.swift in Sources */,
