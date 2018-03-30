@@ -20,13 +20,14 @@ class StatusDetailCustomeViewController: UITableViewController {
         loadList()
         self.tableView.reloadData()
     }
-    
+    /// Get the tag list.
     private func loadList() {
         let tags = equipmentList[deviceIndex].tags.keys
         for temp in tags {
             tagList.append(temp)
         }
     }
+    /// Store the checked items for new custome list.
     @objc private func saveList(){
         for i in 0 ..< tagList.count {
             let cell = self.tableView.cellForRow(at: IndexPath(row: i, section: 0))
@@ -35,6 +36,10 @@ class StatusDetailCustomeViewController: UITableViewController {
             }
         }
         equipmentList[deviceIndex].tagsDisplay = self.checkedList
+        let encoder = JSONEncoder()
+        if let encoded = try? encoder.encode(equipmentList){
+            UserDefaults.standard.set(encoded, forKey: "tagsDisplay")
+        }
         self.parentVC?.tagsList = equipmentList[deviceIndex].tagsDisplay
         self.navigationController?.popViewController(animated: true)
     }

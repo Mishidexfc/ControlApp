@@ -28,6 +28,7 @@ class CsvParser {
         
     }
     
+    /// Send the original csv string, return the dictionary which key is the tag name.
     func parseString(stringData:String) -> [String:[String]] {
         var tempStringArr = parseStringToLines(stringData: stringData)
         for item in tempStringArr {
@@ -64,17 +65,21 @@ class CsvParser {
                         csvResult[result[1]] = []
                     }
                     csvResult[result[1]]!.append(result[2])
+                    csvResult[result[1]]!.append(result[0])
                 break
             case .history:
                
-                    if (csvResult[result[1]] == nil) {
-                        csvResult[result[1]] = []
+                    if (csvResult[result[0]] == nil) {
+                        csvResult[result[0]] = []
                     }
-                    csvResult[result[1]]!.append(result[1])
-                    csvResult[result[1]]!.append(result[4])
-                
+                    csvResult[result[0]]!.append(result[1])
+                    csvResult[result[0]]!.append(result[4])
                 break
-            default:
+            case .alarms:
+                if (csvResult[result[2]] == nil) {
+                    csvResult[result[2]] = []
+                }
+                csvResult[result[2]]?.append(result[1])
                 break
             }
         }

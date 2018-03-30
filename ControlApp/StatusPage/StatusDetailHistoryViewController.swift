@@ -20,6 +20,7 @@ class StatusDetailHistoryViewController:UIViewController,UITextFieldDelegate {
         setContent()
         TV_RawResult.text = ""
     }
+    /// Submit the request to ewon
     @IBAction func TapRetrieve(_ sender: UIButton) {
         HistoryLoading.startAnimating()
         let me = self.parent as! StatusDetailViewController

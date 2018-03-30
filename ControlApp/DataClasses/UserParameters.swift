@@ -13,6 +13,7 @@ class UserParameters: NSObject,Codable {
     var t2musername = ""
     var t2mpassword = ""
     var t2msession = ""
+    // This is the dictionary of credentials for each device
     var devicesKeyChain:[String:[String]] = ["TEST":["adm","adm"]]
     var t2mdeviceusername = "adm"
     var t2mdevicepassword = "adm"

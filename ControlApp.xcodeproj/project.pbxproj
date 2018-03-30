@@ -21,6 +21,8 @@
 		0B12AC68202204CD00123C30 /* StatusDetailHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B12AC67202204CD00123C30 /* StatusDetailHistoryViewController.swift */; };
 		0B28DD6120360CFB00B6BAEE /* StatusDetailCustomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B28DD6020360CFB00B6BAEE /* StatusDetailCustomeViewController.swift */; };
 		0B36F6502033251E00F620EF /* AccountSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B36F64F2033251E00F620EF /* AccountSettingsViewController.swift */; };
+		0B387734205BF83F0031D4F9 /* DetailAlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B387733205BF83F0031D4F9 /* DetailAlarmViewController.swift */; };
+		0B5DEC252048785100EC6F80 /* StatusDetailImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5DEC242048785100EC6F80 /* StatusDetailImageCell.swift */; };
 		0B8C101420110215008322C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8C101320110215008322C3 /* AppDelegate.swift */; };
 		0B8C101620110215008322C3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8C101520110215008322C3 /* LoginViewController.swift */; };
 		0B8C101920110215008322C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B8C101720110215008322C3 /* Main.storyboard */; };
@@ -31,8 +33,6 @@
 		0B8C102F20127791008322C3 /* SupportCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8C102E20127791008322C3 /* SupportCollectionCell.swift */; };
 		0B8C10312017AD72008322C3 /* StatusGeneralCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8C10302017AD72008322C3 /* StatusGeneralCell.swift */; };
 		0BB7F8DF2023783E00EBEFB8 /* StatusDetailChartFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB7F8DE2023783E00EBEFB8 /* StatusDetailChartFormat.swift */; };
-		0BB7F8E22024BF4C00EBEFB8 /* ThemeConfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 0BB7F8E12024BF4C00EBEFB8 /* ThemeConfiguration.json */; };
-		0BB7F8E42024C2F700EBEFB8 /* UserConfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 0BB7F8E32024C2F700EBEFB8 /* UserConfiguration.json */; };
 		0BC0202A20370B35006C8107 /* StatusDetailCustomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC0202920370B35006C8107 /* StatusDetailCustomeCell.swift */; };
 		0BC0202C20375F27006C8107 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC0202B20375F27006C8107 /* LoginModel.swift */; };
 		DE24869F4F4763A8DA9114A4 /* Pods_ControlApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 874F594FAAA52F3515A7653D /* Pods_ControlApp.framework */; };
@@ -53,6 +53,8 @@
 		0B12AC67202204CD00123C30 /* StatusDetailHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusDetailHistoryViewController.swift; sourceTree = "<group>"; };
 		0B28DD6020360CFB00B6BAEE /* StatusDetailCustomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusDetailCustomeViewController.swift; sourceTree = "<group>"; };
 		0B36F64F2033251E00F620EF /* AccountSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsViewController.swift; sourceTree = "<group>"; };
+		0B387733205BF83F0031D4F9 /* DetailAlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAlarmViewController.swift; sourceTree = "<group>"; };
+		0B5DEC242048785100EC6F80 /* StatusDetailImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusDetailImageCell.swift; sourceTree = "<group>"; };
 		0B8C101020110215008322C3 /* ControlApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ControlApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B8C101320110215008322C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0B8C101520110215008322C3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -65,8 +67,6 @@
 		0B8C102E20127791008322C3 /* SupportCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportCollectionCell.swift; sourceTree = "<group>"; };
 		0B8C10302017AD72008322C3 /* StatusGeneralCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusGeneralCell.swift; sourceTree = "<group>"; };
 		0BB7F8DE2023783E00EBEFB8 /* StatusDetailChartFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusDetailChartFormat.swift; sourceTree = "<group>"; };
-		0BB7F8E12024BF4C00EBEFB8 /* ThemeConfiguration.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ThemeConfiguration.json; sourceTree = "<group>"; };
-		0BB7F8E32024C2F700EBEFB8 /* UserConfiguration.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = UserConfiguration.json; sourceTree = "<group>"; };
 		0BC0202920370B35006C8107 /* StatusDetailCustomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusDetailCustomeCell.swift; sourceTree = "<group>"; };
 		0BC0202B20375F27006C8107 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		23F8253D14AA4BF39B7D3F0F /* Pods-ControlApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ControlApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ControlApp/Pods-ControlApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -128,7 +128,6 @@
 		0B8C101220110215008322C3 /* ControlApp */ = {
 			isa = PBXGroup;
 			children = (
-				0BB7F8E02024BF1200EBEFB8 /* JsonConfiguration */,
 				0B8C101320110215008322C3 /* AppDelegate.swift */,
 				0B12AC57201902A500123C30 /* DataClasses */,
 				0B8C102920124A53008322C3 /* LoginPage */,
@@ -166,6 +165,8 @@
 				0BB7F8DE2023783E00EBEFB8 /* StatusDetailChartFormat.swift */,
 				0B28DD6020360CFB00B6BAEE /* StatusDetailCustomeViewController.swift */,
 				0BC0202920370B35006C8107 /* StatusDetailCustomeCell.swift */,
+				0B5DEC242048785100EC6F80 /* StatusDetailImageCell.swift */,
+				0B387733205BF83F0031D4F9 /* DetailAlarmViewController.swift */,
 			);
 			path = StatusPage;
 			sourceTree = "<group>";
@@ -177,15 +178,6 @@
 				0B8C102E20127791008322C3 /* SupportCollectionCell.swift */,
 			);
 			path = SupportPage;
-			sourceTree = "<group>";
-		};
-		0BB7F8E02024BF1200EBEFB8 /* JsonConfiguration */ = {
-			isa = PBXGroup;
-			children = (
-				0BB7F8E12024BF4C00EBEFB8 /* ThemeConfiguration.json */,
-				0BB7F8E32024C2F700EBEFB8 /* UserConfiguration.json */,
-			);
-			path = JsonConfiguration;
 			sourceTree = "<group>";
 		};
 		544FA6AC553DDE25F36A68E1 /* Pods */ = {
@@ -268,8 +260,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B8C101E20110215008322C3 /* LaunchScreen.storyboard in Resources */,
-				0BB7F8E22024BF4C00EBEFB8 /* ThemeConfiguration.json in Resources */,
-				0BB7F8E42024C2F700EBEFB8 /* UserConfiguration.json in Resources */,
 				0B8C101B20110215008322C3 /* Assets.xcassets in Resources */,
 				0B8C101920110215008322C3 /* Main.storyboard in Resources */,
 			);
@@ -360,8 +350,10 @@
 				0BC0202C20375F27006C8107 /* LoginModel.swift in Sources */,
 				0B12AC62201A6D2B00123C30 /* AccountLogoutCell.swift in Sources */,
 				0B12AC502017C39200123C30 /* StatusAddNewCell.swift in Sources */,
+				0B5DEC252048785100EC6F80 /* StatusDetailImageCell.swift in Sources */,
 				0B12AC59201902CE00123C30 /* CsvParser.swift in Sources */,
 				0B8C101620110215008322C3 /* LoginViewController.swift in Sources */,
+				0B387734205BF83F0031D4F9 /* DetailAlarmViewController.swift in Sources */,
 				0B12AC5B201A0F6000123C30 /* EwonApiCase.swift in Sources */,
 				0B8C1026201135CF008322C3 /* StatusViewController.swift in Sources */,
 				0B8C1028201248A6008322C3 /* SupportViewController.swift in Sources */,

@@ -15,13 +15,14 @@ class StatusDetailViewController: UIViewController {
     @IBOutlet weak var DetailSegment: UISegmentedControl!
     @IBOutlet weak var DetailRealtimeView: UIView!
     @IBOutlet weak var DetailHistoryView: UIView!
+    @IBOutlet weak var DetailAlarmView: UIView!
     var tagsList : [String] = []
     private var linechartData = LineChartData()
     var equipIndex :Int = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         self.DetailSegment.selectedSegmentIndex = 0
-        let item = UIBarButtonItem(title: "Custome", style: .plain, target: self, action: #selector(self.customeList))
+        let item = UIBarButtonItem(title: "Customize", style: .plain, target: self, action: #selector(self.customeList))
         self.navigationItem.rightBarButtonItem = item
         displayValues()
     }
@@ -43,8 +44,16 @@ class StatusDetailViewController: UIViewController {
     func parseCsv(string:String, deviceIndex:Int) {
         let myParser = CsvParser()
         myParser.parseFor = .history
+        equipmentList[deviceIndex].tagsHistory.removeAll()
         let result = myParser.parseString(stringData: string)
-        equipmentList[deviceIndex].tagsHistory = result
+        for i in result {
+            for k in equipmentList[deviceIndex].tags {
+                if (k.value[1] == i.key && equipmentList[deviceIndex].tagsDisplay.contains(k.key)) {
+                    equipmentList[deviceIndex].tagsHistory[k.key] = i.value
+                    break
+                }
+            }
+        }
         drawLinePlot()
     }
     
@@ -68,14 +77,13 @@ class StatusDetailViewController: UIViewController {
                 let dataEntryTemp = ChartDataEntry(x: Double(temp.value[i])!, y: Double(temp.value[i + 1])!)
                 dataEntrySet.append(dataEntryTemp)
             }
+            if (index > myColors.count - 1) {
+                index = 0
+            }
             let line = LineChartDataSet(values: dataEntrySet, label: temp.key)
             line.colors = [myColors[index]]
             line.drawCirclesEnabled = false
-            
             index += 1
-            if (index > equipmentList[equipIndex].tagsHistory.count - 1) {
-                index -= 1
-            }
             lineSet.append(line)
         }
         let lineData = LineChartData(dataSets: lineSet)
@@ -84,6 +92,7 @@ class StatusDetailViewController: UIViewController {
         myChartView.xAxis.valueFormatter = myFormat
         myChartView.animate(xAxisDuration: 3)
     }
+    /// Push the view controller with all the tag list.
     @objc func customeList(){
         let customeVC = self.storyboard?.instantiateViewController(withIdentifier: "CustomeDetail") as! StatusDetailCustomeViewController
         customeVC.deviceIndex = self.equipIndex
@@ -91,21 +100,30 @@ class StatusDetailViewController: UIViewController {
         self.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(customeVC, animated: true)
     }
-    
+    // Switch the segment.
     @IBAction func TapSegment(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0:
             self.DetailHistoryView.isHidden = true
+            self.DetailAlarmView.isHidden = true
             self.DetailRealtimeView.isHidden = false
             break
         case 1:
             self.DetailHistoryView.isHidden = false
+            self.DetailAlarmView.isHidden = true
+            self.DetailRealtimeView.isHidden = true
+            break
+        case 2:
+            self.DetailHistoryView.isHidden = true
+            self.DetailAlarmView.isHidden = false
             self.DetailRealtimeView.isHidden = true
             break
         default:
             break
         }
     }
+    
+    /// Send the equipment index to the next viewController
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "DetailRealtime") {
             if let realtimeVc = segue.destination as? StatusDetailRealtimeViewController {
@@ -115,6 +133,11 @@ class StatusDetailViewController: UIViewController {
         }
         else if (segue.identifier == "DetailToCustome") {
             if let customeVc = segue.destination as? StatusDetailCustomeViewController {
+                customeVc.deviceIndex = self.equipIndex
+            }
+        }
+        else {
+            if let customeVc = segue.destination as? DetailAlarmViewController {
                 customeVc.deviceIndex = self.equipIndex
             }
         }

@@ -4,7 +4,9 @@
 //
 //  Created by Jue Wang on 2018/1/23.
 //  Copyright © 2018年 AlfaLavalNiagaraBlowers. All rights reserved.
-//
+////////////////////////////////////////////////////////////
+// Description: Currently no use.
+////////////////////////////////////////////////////////////
 
 import UIKit
 class StatusAddNewCell:UITableViewCell {

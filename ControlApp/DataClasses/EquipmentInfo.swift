@@ -10,7 +10,7 @@
 ////////////////////////////////////////////////////////////
 
 import Foundation
-class EquipmentInfo {
+class EquipmentInfo:Codable {
     var id = ""
     var name = ""
     var encodedName = ""

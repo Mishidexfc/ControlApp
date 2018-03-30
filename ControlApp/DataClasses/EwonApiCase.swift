@@ -226,7 +226,36 @@ class EwonApiCase {
         }
     }
     
-    
+    ///
+    func getRealtimeAlarm(deviceIndex: Int, completion: @escaping (String,Int)->Void) {
+        let parameters: Parameters = [
+            "AST_Param": "$dtAR$ftT",
+            "t2mdeveloperid": userParameter.t2mdeveloperid,
+            "t2maccount": userParameter.t2maccount,
+            "t2musername": userParameter.t2musername,
+            "t2mpassword": userParameter.t2mpassword,
+            "t2mdeviceusername": userParameter.t2mdeviceusername,
+            "t2mdevicepassword": userParameter.t2mdevicepassword
+        ]
+        let deviceName = equipmentList[deviceIndex].name
+        /// Send http(POST) request with the above parameters
+        let tagUrl = "https://us1.m2web.talk2m.com/t2mapi/get/\(deviceName)/rcgi.bin/ParamForm" as URLConvertible
+        Alamofire.request(tagUrl, method: .post, parameters: parameters).responseString { response in
+            switch (response.result) {
+            case .success:
+                /// Convert the response into csv format
+                if let myCsv = response.result.value {
+                    print(myCsv)
+                    completion(myCsv,deviceIndex)
+                }
+                break
+            case .failure(let error):
+                print((error as NSError!).code)
+                print("error!!!!!!")
+                break
+            }
+        }
+    }
     /**
      private func updateEquipList(completion: @escaping ()->Void) {
      let parameters: Parameters = [

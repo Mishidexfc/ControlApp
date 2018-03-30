@@ -11,9 +11,12 @@ class StatusEquipmentCell: UITableViewCell {
     @IBOutlet weak var equipmentNameLabel : UILabel!
     @IBOutlet weak var equipmentStateLabel : UILabel!
     @IBOutlet weak var equipmentImage: UIImageView!
-    func setContent(name:String, state:String, image:UIImage) {
+    
+    @IBOutlet weak var alarmNumLabel: UILabel!
+    func setContent(name:String, state:String, image:UIImage, alarm: Int) {
         equipmentNameLabel.text = name
         equipmentStateLabel.text = state
         equipmentImage.image = image
+        alarmNumLabel.text = "\(alarm)"
     }
 }

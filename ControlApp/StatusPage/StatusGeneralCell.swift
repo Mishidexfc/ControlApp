@@ -12,6 +12,6 @@ class StatusGeneralCell:UITableViewCell {
     @IBOutlet weak var alertLabel:UILabel!
     func updateContent(internetStatus:String,alertNumber:Int) {
         internetLabel.text = "Internet: \(internetStatus)"
-        alertLabel.text = "Alerts: \(alertNumber)"
+        alertLabel.text = "Alarms: \(alertNumber)"
     }
 }

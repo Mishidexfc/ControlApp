@@ -33,6 +33,8 @@ class AccountViewController:UIViewController,UITableViewDelegate,UITableViewData
         }
         self.accountTableView.deselectRow(at: indexPath, animated: true)
     }
+    
+    // Return to the login page.
     private func goLoginPage(){
         logoutLoading.stopAnimating()
         let sb = UIStoryboard(name: "Main", bundle:nil)

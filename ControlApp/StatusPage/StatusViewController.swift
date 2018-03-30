@@ -67,6 +67,7 @@ class StatusViewController: UIViewController, UITableViewDelegate,UITableViewDat
         print("loading")
         for i in 0 ..< equipmentList.count {
             ewon.refreshTagData(deviceIndex: i,completion: self.parseCsv(string:deviceIndex:))
+            ewon.getRealtimeAlarm(deviceIndex: i, completion: self.parseCsvForAlarm(string:deviceIndex:))
         }
     }
     
@@ -79,19 +80,38 @@ class StatusViewController: UIViewController, UITableViewDelegate,UITableViewDat
     }
     
     ///
+    private func parseCsvForAlarm(string:String, deviceIndex:Int) {
+        let myParser = CsvParser()
+        myParser.parseFor = .alarms
+        let result = myParser.parseString(stringData: string)
+        equipmentList[deviceIndex].alarms = result
+        self.StatusTable.reloadData()
+    }
+    
+    
     /// Table view functions------------------------------
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section{
         case 0:
             let tempcell = StatusTable.dequeueReusableCell(withIdentifier: "StatusGerneralCell") as! StatusGeneralCell
-            tempcell.updateContent(internetStatus: getNetState(),alertNumber: 0)
+            var alertNum = 0
+            for i in equipmentList {
+                for k in i.alarms {
+                    alertNum += k.value.count
+                }
+            }
+            tempcell.updateContent(internetStatus: getNetState(),alertNumber: alertNum)
             return tempcell
         case 1:
             let tempcell = StatusTable.dequeueReusableCell(withIdentifier: "StatusEquipmentCell") as! StatusEquipmentCell
             let cellName = equipmentList[indexPath.item].name
             let cellState = equipmentList[indexPath.item].status
             let cellImage = cellState == "offline" ? UIImage(named: "monitor")! : UIImage(named: "monitor2")!
-            tempcell.setContent(name: cellName, state: cellState, image: cellImage)
+            var alertNum = 0
+            for i in equipmentList[indexPath.item].alarms {
+                alertNum += i.value.count
+            }
+            tempcell.setContent(name: cellName, state: cellState, image: cellImage, alarm: alertNum)
             return tempcell
         case 2:
             let tempcell = StatusTable.dequeueReusableCell(withIdentifier: "StatusAddNewCell") as! StatusAddNewCell
